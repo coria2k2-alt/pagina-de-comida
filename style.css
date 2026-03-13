@@ -10,6 +10,10 @@
 
 body{
     font-family: 'poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
 }
 
 .container{
@@ -20,7 +24,7 @@ body{
 .header{
     display: flex;
     align-items: center;
-    min-height: 70vh;
+    min-height: 70vh; 
 }
 
 .menu{
@@ -79,6 +83,13 @@ body{
 .submenu #carrito{
     display: none;
 }
+
+
+.main {
+    flex: 1; 
+    width: 100%;
+}
+
 
 .submenu:hover #carrito{
     display: block;
@@ -196,6 +207,7 @@ p{
     align-items: center;
     background-color: #ff9000;
     padding: 10px;
+    margin-left: 70px;
     border-radius: 15px;
     width: 200px;
     box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
@@ -249,10 +261,11 @@ p{
 }
 
 .box-container{
-    margin-top: 55px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
+    display: flex; /* Esto pone los platos en fila */
+    flex-wrap: wrap; /* Esto permite que si no caben, bajen a la siguiente fila */
+    justify-content: center; /* Los centra en la pantalla */
+    gap: 20px; /* El espacio entre cada plato */
+    width: 100%;
 }
 
 .box{
@@ -527,3 +540,126 @@ p{
         text-align: center;
     }
 }
+
+
+/*-------------------------------------------------*/
+/*                    contacto                      */
+/*-------------------------------------------------*/
+
+.header-contact{
+    display: flex;
+    align-items: center;
+    border:2px solid #ef8700;
+    /* border-bottom: 2px solid #ef8700;
+    height: 100px;  no aparece porque su altura es de 0px porque no hay contenido adentro el menu lo esta tapando*/
+    background-color: red;/* esto no se va a ver porque mide 0px de alto */
+}
+    
+.main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.section-contacto{
+    width: 100%;
+    margin: 0 auto ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 38rem;
+    padding: 12px;
+    background-color: #ef8700;
+    border-radius: 30px;
+    gap: 20px;
+    box-shadow: 0 0 20px 0;
+}
+
+.campo-form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.campo-form label{
+    font-size: 20px;
+    color: #fff;
+}
+
+.campo-form input , 
+.campo-form textarea{
+    padding: 12px;
+    background-color: #fff;
+    width: 100%;
+    height: 35px;
+    border-radius: 7px;
+    font-size: 10px;
+    border: none;
+}
+
+.titulo-contacto{
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.form .button {
+    /* Tamaño y forma */
+    padding: 12px 40px;      
+    width: 100%;             
+    min-width: 150px;        /* Un ancho mínimo para que no se vea chiquito */
+    border-radius: 20px;     
+    
+    /* Colores y Texto */
+    background-color: #1d1d1b; 
+    color: #ffffff;            
+    border: none;
+    font-size: 14px;
+    font-weight: 800;          
+    text-transform: uppercase; 
+    letter-spacing: 1px;       
+    
+    /* Interactividad */
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+}
+
+/* Efecto cuando alguien pasa el mouse por arriba*/
+.form .button:hover {
+    background-color: #333333;
+    transform: translateY(-5px); /* Pequeño salto hacia arriba */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto cuando lo presionas */
+.form .button:active {
+    transform: translateY(0);
+}
+
+.footer-contacto{
+    background-color: #1d1a20;
+
+    padding: 2rem;
+    color: #f7bb2b;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
